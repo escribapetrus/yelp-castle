@@ -1,0 +1,33 @@
+<% include ../partials/header %>  	
+<div class="container show">	
+  	<header class="jumbotron text-center">
+  		<h1 class="display-3">Welcome to YelpCastle</h1>
+  		<p class="lead">YelpCastle is a collection of castles from all around the world. Enjoy!</p>
+
+	  		<a class="btn btn-primary btn-lg" href="/castles/new">add new</a>
+			<!-- INCLUDE SEARCH FUNCTIONALITY -->
+	  		
+  	</header>
+  	
+
+ 	<div class="row text-center">
+ 		<div class="col-lg-12 my-3">
+ 			<h3 class="display-4">Top castles</h3>
+ 		</div>
+ 	</div>
+ 	<div class="row">
+ 	<% castles.forEach(function(place){ %>
+		<div class="card col col-12 col-md-6 col-lg-4" style="width: 18rem;">
+			<div class="card-body">
+		    	<h3 class="card-text text-center"><%= place.name %></h3>
+			</div>
+			<img class="card-img-top" src="<%= place.image %>" alt="Card image cap">
+			<div class="card-body">
+		    	<p class="card-text text-left lead"><%= place.description %></h3>	
+			</div>
+			<a class="btn btn-primary btn-lg" href="/castles/<%= place.id %>">view</a>
+		</div>
+ 		<% }) %>
+ 	</div>
+</div>  
+<% include ../partials/footer %>
