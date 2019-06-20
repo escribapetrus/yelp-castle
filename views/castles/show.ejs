@@ -6,9 +6,8 @@
 			<div class="list-group">
 				<p class="lead">Information</p>
 				<ul>
-				<li class="list-group-item">London, England</li>
+				<li class="list-group-item"><%= castle.location %></li>
 				<li class="list-group-item">Built on <%= castle.year %></li>
-				<li class="list-group-item">Normand style</li>
 				</ul>
 			</div>
 			<div>
@@ -61,7 +60,17 @@
 	</div>
 </div>
 
-<script src="/js/scripts.js"></script>
+<script>
+	function initMap() {
+		var ju = {lat: <%= castle.lat %>, lng: <%= castle.lng %>};
+		var map = new google.maps.Map(
+			document.getElementById('map'), {zoom: 4, center: ju}
+		);
+		var marker = new google.maps.Marker(
+			{position: ju, map: map}
+		);
+	}
+</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfS0TNoHbUoign7o-ccaYZPDtJT0OAKtg&callback=initMap"></script>
 
 <% include ../partials/footer %>

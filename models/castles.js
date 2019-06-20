@@ -4,7 +4,10 @@ var Comment = require("./comments.js");
 var castleSchema = new mongoose.Schema({
 	name: String,
 	image: String,
-	year: String,
+	year: Number,
+	location: String,
+	lat: Number,
+	lng: Number,
 	createdAt: { type: Date, default: Date.now() },
 	description: String,
 	author: {

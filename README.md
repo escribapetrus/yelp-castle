@@ -11,9 +11,9 @@ Latest updates:
 - Added flash messages and error handling
 - Added admin functionality
 - Added post and comment dates
+- Added integration with Google Maps API
 
 Pending:
 - Add search functionality
 - Improve interface
 - Add definitive data to database
-- Include Google Maps API
