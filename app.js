@@ -9,13 +9,12 @@ LocalStrategy = require("passport-local");
 methodOverride = require("method-override");
 var expressSession = require("express-session")
 var User = require("./models/users.js")
-
 var commentRoutes = require("./routes/comments.js")
 var castleRoutes = require("./routes/castles.js")
 var indexRoutes = require("./routes/index.js")
 
 //SETUPS
-mongoose.connect("mongodb+srv://admin:<password>@cluster0-mhvjw.gcp.mongodb.net/test?retryWrites=true&w=majority", { 
+mongoose.connect("mongodb+srv://admin:123mudei@cluster0-mhvjw.gcp.mongodb.net/test?retryWrites=true&w=majority", { 
 	useNewUrlParser: true,
 	useCreateIndex: true
 }).then(() => {
@@ -30,6 +29,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"))
 app.use(methodOverride("_method"));
 app.use(flash());
+app.locals.moment = require("moment");
 // seed();
 //PASSPORT CONFIG
 app.use(expressSession({
@@ -47,7 +47,6 @@ app.use(function(req,res,next){
 	res.locals.currentUser = req.user;
 	res.locals.error = req.flash("error")
 	res.locals.success = req.flash("success")
-
 	next();
 });
 app.use(indexRoutes)

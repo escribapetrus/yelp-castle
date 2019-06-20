@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 var Comment = require("./comments.js");
 
-
 var castleSchema = new mongoose.Schema({
 	name: String,
 	image: String,
+	year: String,
+	createdAt: { type: Date, default: Date.now() },
 	description: String,
 	author: {
 		id:{

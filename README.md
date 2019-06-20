@@ -9,9 +9,11 @@ Latest updates:
 - Added user authorization
 - Changed styles from Bootstrap 4 to Bootstrap Material Design by @FezVrasta
 - Added flash messages and error handling
+- Added admin functionality
+- Added post and comment dates
 
 Pending:
-- Implement admin functionality
+- Add search functionality
 - Improve interface
 - Add definitive data to database
 - Include Google Maps API

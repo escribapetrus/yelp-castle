@@ -23,7 +23,7 @@ middlewareObj.checkCommentOwnership = function (req,res, next) {
 		if(err || !comment){
 			req.flash("error", "Comment not found")
 			res.redirect("/castles");
-		} else if(comment.author.id.equals(req.user._id)){
+		} else if(comment.author.id.equals(req.user._id) || req.user.isAdmin ){
 			req.comment = comment		
 			next();
 		} else {

@@ -20,12 +20,13 @@ router.get("/castles/new", middleware.isLoggedIn, function(req, res){
 router.post("/castles", middleware.isLoggedIn, function(req, res){
 	var name = req.body.name;
 	var image = req.body.image;
+	var year = req.body.year;
     var description = req.body.description;
     var author = {
         id: req.user._id,
         username: req.user.username
     };
-    var newCastle = {name: name, image: image, description: description, author:author};
+    var newCastle = {name: name, year:year, image: image, description: description, author:author};
     console.log(req.user);
 	//create castle and save to DB
 	Castle.create(newCastle, function(err, newC){
