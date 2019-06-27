@@ -59,6 +59,6 @@ app.use(userRoutes);
 
 
 //SERVER
-app.listen(3000, function () {
-  console.log('Yelp Castle listening on port 3000!')
+app.listen(process.env.PORT, process.env.IP, function () {
+  console.log('Yelp Castle server started!')
 })
