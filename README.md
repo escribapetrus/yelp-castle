@@ -14,6 +14,8 @@ Latest updates:
 - Added integration with Google Maps API
 
 Pending:
+- Add user profile
+- Add CRUD functionality to users
 - Add search functionality
 - Improve interface
 - Add definitive data to database

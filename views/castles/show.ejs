@@ -5,7 +5,7 @@
 		<div class="col-md-3 text-left">
 			<div class="list-group">
 				<p class="lead">Information</p>
-				<ul>
+				<ul class="info">
 				<li class="list-group-item"><%= castle.location %></li>
 				<li class="list-group-item">Built on <%= castle.year %></li>
 				</ul>
@@ -24,7 +24,7 @@
  						 <span class="float-left"><h4><a href=""><%= castle.name %></a></h4></span>
 					</div>					
 					<p><%= castle.description %></p>
-					<p><em>submitted by <%= castle.author.username %> <%= moment(castle.createdAt).fromNow() %></em></p>
+					<p><em>submitted by <a href="/<%= castle.author.id %>/profile"><%= castle.author.username %></a> <%= moment(castle.createdAt).fromNow() %></em></p>
 					
 					<% if(currentUser && castle.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 						<a href="/castles/<%= castle._id %>/edit" class="btn btn-secondary">Edit</a>

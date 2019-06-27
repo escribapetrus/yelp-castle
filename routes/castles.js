@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 var Castle = require("../models/castles")
-var Comment = require("../models/comments")
 var middleware = require("../middleware")
 var NodeGeocoder= require("node-geocoder")
  
