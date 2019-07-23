@@ -23,17 +23,17 @@
 							<a class="nav-link" href="/castles">Castles</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/castles/new">Add new</a>
+							<a href="/castles/new" class="nav-link">Add new</a>
 						</li>
 					</ul>
 					<ul class="navbar-nav ml-auto">
 						<% if(!currentUser){ %> 
 							<li class="nav-item">
 									<a class="nav-link" href="/login">Login</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="/register">Sign Up</a>
-								</li>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/register">Sign Up</a>
+							</li>
 						<% } else { %>
 							<li class="nav-item">
 								<span class="nav-link">Signed in as <%= currentUser.username %></span>
